@@ -1,8 +1,23 @@
-Distributed Fault-tolerant stack in Go. Adapted from Raftexample in etcd
+
+# Distributed Fault-tolerant Stack in Go.
+
+This is repo contains an implementation of a Distributed Fault-Tolerant Stack in Golang. <br>
+Most modern large-scale applications are distributed in nature and are designed around high-availability. A fundamental principle underlying such systems is that failure is inevitable. Having fault-tolerance built-in, essentially helps to mitigate the effects of such failures, which
+can be very critical depending on nature of the application. In the event of a failure of one or more underlying computer systems, we need a way to have the entire state of the application reach a consistent state before it can continue to operate.
+The faster the application is able to recover from such failures, the lesser the chance of affecting the end-user, which often becomes a deciding factor as far as usability is concerned. I am using a distributed consensus algorithm called Raft that provides such a
+mechanism. I love the simplicity of the algorithm as compared to it's ancient counter-part Paxos. This example is adapted from Etcd, a popular distributed key-value store that also uses Raft algorithm to implement fault-tolerance.
+
+## A Short primer to Raft
+The github repo for ![Raft](https://raft.github.io/) is the best resource to get a comprehensive understanding of the algorithm. I'll only highlight some important aspects here.
+
+<i>TODO
+
+## Running the application.
+
+A pre-req is to have Go and goremon installed.
 
 To compile : 
-1. Go to main folder
-2. run command :  go build
+1.Run command :  go build
 
 To Start a single node server :
 1. ./{appname} --id 1 --cluster http://127.0.0.1:12379 --port 12380
