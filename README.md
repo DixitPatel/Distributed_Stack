@@ -1,7 +1,7 @@
 
 # Distributed Fault-tolerant Stack in Go.
 
-This is repo contains an implementation of a Distributed Fault-Tolerant Stack in Golang. <br><br>
+This is repo contains an implementation of a Distributed Fault-Tolerant Stack in Golang. <br>
 
 **Tech Stack** : Golang, Goreman ([foreman](http://blog.daviddollar.org/2011/05/06/introducing-foreman.html) tool for Go), Raft Consensus algorithm.
 
@@ -58,26 +58,26 @@ The github repo for [Raft](https://raft.github.io/) is the best resource to get 
   - You can use the following commands to understand the behaviour of the algorithm under differnt situations. 
   - A pre-req is to have Go and goreman () installed.
 
-To compile : 
-1.Run command :  go build
+  - Compile : 
+    - run : go build
 
-To Start a single node server :
-1. ./{appname} --id 1 --cluster http://127.0.0.1:12379 --port 12380
+  - To Start a single node server :
+    - ./{appname} --id 1 --cluster http://127.0.0.1:12379 --port 12380
 
-To Start multiple servers :
-1. Modify procfile and add new servers with valid port numbers. Current number is 5
-2. run command : goreman start
+  - Initialize server cluster :
+    1. Modify procfile and add new servers with valid port numbers. Current number is 5
+    2. run command : goreman start
 
-Stack operations :
-1. Create Stack :          curl -L http://127.0.0.1:12380/sCreate -XPOST -d 1
-2. Search Stack :          curl -L http://127.0.0.1:12380/sId -XPOST -d 1
-3. Push to stack :         curl -L http://127.0.0.1:12380/sPush -XPOST -d 1,10
-4. Check Top element  :    curl -L http://127.0.0.1:12380/sTop -XPOST -d 1
-5. Check Size of Stack :   curl -L http://127.0.0.1:12380/sSize -XPOST -d 1
-6. Restart a node :        goreman run start raftexample{id}
-7. Kill a node :           goreman run stop raftexample{id}
+  - Stack operations :
+       1. Create Stack :          curl -L http://127.0.0.1:12380/sCreate -XPOST -d 1
+       2. Search Stack :          curl -L http://127.0.0.1:12380/sId -XPOST -d 1
+       3. Push to stack :         curl -L http://127.0.0.1:12380/sPush -XPOST -d 1,10
+       4. Check Top element  :    curl -L http://127.0.0.1:12380/sTop -XPOST -d 1
+       5. Check Size of Stack :   curl -L http://127.0.0.1:12380/sSize -XPOST -d 1
+       6. Restart a node :        goreman run start raftexample{id}
+       7. Kill a node :           goreman run stop raftexample{id}
 
-* TODO 
+**TODO** 
   - Improve interface for executing the commands.
   - Handle Edge cases for stack push and pop during replication/consensus failure.
 
