@@ -49,15 +49,13 @@ The github repo for [Raft](https://raft.github.io/) is the best resource to get 
   - Client side : 
     - Clients follow a protocol to change state machine through the leader. 
     - Issues a unique id for each request and retries in case it doesn't receive a response from leader.
-    - In-case the leader failed after itexecuted/committed the command and before sending the client a response, it will not re-run the command. Instead
+    - In-case the leader failed after it executed/committed the command and before sending the client a response, it will not re-run the command. Instead
       will check for unique id in the client request and return result immediately if it exists inside it's local log.
 
 
 
 ## Running the application.
-  - You can use the following commands to understand the behaviour of the algorithm under differnt situations. 
-  - A pre-req is to have Go and goreman () installed.
-
+You can use the following commands to understand the behaviour of the algorithm under different situations. 
   - Compile : 
     - run : go build
 
