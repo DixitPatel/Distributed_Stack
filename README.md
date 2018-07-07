@@ -79,5 +79,5 @@ The github repo for [Raft](https://raft.github.io/) is the best resource to get 
 
 **TODO** 
   - Improve interface for executing the commands.
-  - Handle Edge cases for stack push and pop during replication/consensus failure.
+  - Improve server response message for stack push and pop during replication/consensus failure.
 
