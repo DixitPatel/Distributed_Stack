@@ -8,7 +8,9 @@ This is repo contains an implementation of a Distributed Fault-Tolerant Stack in
 Most modern large-scale applications are distributed in nature and are designed around high-availability. A fundamental principle underlying such systems is that failure is inevitable. Having fault-tolerance built-in, essentially helps to mitigate the effects of such failures, which
 can be very critical depending on nature of the application. In the event of a failure of one or more underlying computer systems, we need a way to have the entire state of the application reach a consistent state before it can continue to operate.
 The faster the application is able to recover from such failures, the lesser the chance of affecting the end-user, which often becomes a deciding factor as far as usability is concerned. <br><br>I am using a distributed consensus algorithm called Raft that provides such a
-mechanism. The algorithm is easier to understand as compared to it's ancient counter-part Paxos. This example is adapted from Etcd, a popular distributed key-value store that also uses Raft algorithm to implement fault-tolerance.
+mechanism. The algorithm is easier to understand as compared to it's ancient counter-part Paxos. This example is adapted from Etcd, a popular distributed key-value store that also uses Raft algorithm to implement fault-tolerance. 
+
+The raft.go file is directly taken from the etcd project. Refer ftstack.go for the implementation of the stack &  httpapi.go for the server side code.
 
 
 
